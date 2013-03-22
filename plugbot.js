@@ -230,9 +230,15 @@ function initUIListeners()
 		skippingVideo = !skippingVideo;
 		$(this).css('color', skippingVideo ? '#3FFF00' : '#ED1C24');
 		$(this).text(skippingVideo ? 'skipping video' : 'skip video');
-		
-		$('#plugbot-btn-hidevideo').click();
-		$('#button-sound').click();
+		if (hidevideo == skippingVideo)
+			{
+			$('#button-sound').click();
+		}
+		else
+			{
+			$('#plugbot-btn-hidevideo').click();
+			$('#button-sound').click();
+		}
 	});
 
     /*

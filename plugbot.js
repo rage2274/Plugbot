@@ -205,6 +205,7 @@ function initUIListeners()
 	{
         hideVideo = !hideVideo;
         $(this).css('color', hideVideo ? '#3FFF00' : '#ED1C24');
+	$(this).text(hideVideo ? 'hiding video' : 'hide video');
         $('#yt-frame').animate(
 		{
             'height': (hideVideo ? '0px' : '271px')
@@ -230,7 +231,7 @@ function initUIListeners()
 		skippingVideo = !skippingVideo;
 		$(this).css('color', skippingVideo ? '#3FFF00' : '#ED1C24');
 		$(this).text(skippingVideo ? 'skipping video' : 'skip video');
-		if (hidevideo == skippingVideo)
+		if (hideVideo == skippingVideo)
 			{
 			$('#button-sound').click();
 		}

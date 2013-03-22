@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+ 
 /*
  * TERMS OF REPRODUCTION USE
  *
@@ -29,11 +30,11 @@
  * still an idiot for not following such a basic rule, so at least I'll have
  * that going for me.
  */
+
 /*
- * NOTE:  This is all procedural as hell because prototypes and any
- * 			OOP techniques in Javascript are stupid and confusing.
+ * NOTE:  This is 100% procedural because I can't see a reason to add classes, etc.
  *
- * @author 	Conner Davis (Logic)
+ * @author 	Conner Davis (Fruity Loops)
  */
 /*
  * Whether the user has currently enabled auto-woot.
@@ -51,6 +52,10 @@ var hideVideo;
  * Whether or not the user has enabled the userlist.
  */
 var userList;
+/*
+ * Whether the current video was skipped or not.
+ */
+var skippingVideo = false;
 
 /*
  * Cookie constants
@@ -65,18 +70,13 @@ var COOKIE_USERLIST = 'userlist';
  */
 var MAX_USERS_WAITLIST = 50;
 
-/*
- * Whenever a user chooses to apply custom username FX to a
- * user, their username and chosen colour and saved here.
- */
-var customUsernames = new Array();
-
 /**
  * Initialise all of the Plug.dj API listeners which we use
  * to asynchronously intercept specific events and the data
  * attached with them.
  */
-function initAPIListeners() {
+function initAPIListeners() 
+{
     /*
      * This listens in for whenever a new DJ starts playing.
      */
@@ -96,8 +96,10 @@ function initAPIListeners() {
      * This listens for whenever a user in the room either WOOT!s
      * or Mehs the current song.
      */
-    API.addEventListener(API.VOTE_UPDATE, function (obj) {
-        if (userList) {
+    API.addEventListener(API.VOTE_UPDATE, function (obj) 
+	{
+        if (userList) 
+		{
             populateUserlist();
         }
     });
@@ -105,8 +107,10 @@ function initAPIListeners() {
     /*
      * Whenever a user joins, this listener is called.
      */
-    API.addEventListener(API.USER_JOIN, function (user) {
-        if (userList) {
+    API.addEventListener(API.USER_JOIN, function (user) 
+	{
+        if (userList) 
+		{
             populateUserlist();
         }
     });
@@ -114,39 +118,22 @@ function initAPIListeners() {
     /*
      * Called upon a user exiting the room.
      */
-    API.addEventListener(API.USER_LEAVE, function (user) {
-        if (userList) {
+    API.addEventListener(API.USER_LEAVE, function (user) 
+	{
+        if (userList) 
+		{
             populateUserlist();
         }
     });
-
-    API.addEventListener(API.CHAT, checkCustomUsernames);
 }
 
-/**
- * Periodically check the chat history to see if any of the messages
- * match that of the user's chosen custom username FX.  If so, then we
- * need to style every instance of those.
- */
-function checkCustomUsernames() {
-    $('span[class*="chat-from"]').each(function () {
-        for (var custom in customUsernames) {
-            var check = customUsernames[custom].split(":");
-            if (check[0] == $(this).text()) {
-                $(this).css({
-                    color: "#" + check[1]
-                });
-                break;
-            }
-        }
-    });
-}
 
 /**
  * Renders all of the Plug.bot "UI" that is visible beneath the video
  * player.
  */
-function displayUI() {
+function displayUI() 
+{
     /*
      * Be sure to remove any old instance of the UI, in case the user
      * reloads the script without refreshing the page (updating.)
@@ -157,27 +144,14 @@ function displayUI() {
      * Generate the HTML code for the UI.
      */
     $('#chat').prepend('<div id="plugbot-ui"></div>');
-    var cWoot = autowoot ? "#3FFF00" : "#ED1C24";
-    var cQueue = autoqueue ? "#3FFF00" : "#ED1C24";
-    var cHideVideo = hideVideo ? "#3FFF00" : "#ED1C24";
-    var cUserList = userList ? "#3FFF00" : "#ED1C24";
+	
+    var cWoot = autowoot ? '#3FFF00' : '#ED1C24';
+    var cQueue = autoqueue ? '#3FFF00' : '#ED1C24';
+    var cHideVideo = hideVideo ? '#3FFF00' : '#ED1C24';
+    var cUserList = userList ? '#3FFF00' : '#ED1C24';
+	
     $('#plugbot-ui').append(
-        '<p id="plugbot-btn-woot" style="color:' + cWoot + '">auto-woot</p><p id="plugbot-btn-queue" style="color:' + cQueue + '">auto-queue</p><p id="plugbot-btn-hidevideo" style="color:' + cHideVideo + '">hide video</p><p id="plugbot-btn-userlist" style="color:' + cUserList + '">userlist</p><h2 title="This makes it so you can give a user in the room a special colour when they chat!">Custom Username FX: <br /><br id="space" /><span onclick="promptCustomUsername()" style="cursor:pointer">+ add new</span></h2>');
-}
-
-/**
- * Prompt the user to provide a new custom username FX.
- *
- * TODO: Save to database per-user for saved settings.
- */
-function promptCustomUsername() {
-    var check = prompt("Format:  username:color\n(For color codes, Google 'Hexadecimal color chart')");
-
-    customUsernames.push(check);
-
-    $('#space').after('<span id="' + check + '" onclick="customUsernames.splice(\'' + check + '\', 1);$(this).next().remove();$(this).remove();" style="cursor:pointer;color:#' + check.split(":")[1] + '">- ' + check.split(":")[0] + '</span><br />');
-
-    checkCustomUsernames();
+        '<p id="plugbot-btn-woot" style="color:' + cWoot + '">auto-woot</p><p id="plugbot-btn-queue" style="color:' + cQueue + '">auto-queue</p><p id="plugbot-btn-hidevideo" style="color:' + cHideVideo + '">hide video</p><p id="plugbot-btn-skipvideo" style="color:#ED1C24">skip video</p><p id="plugbot-btn-userlist" style="color:' + cUserList + '">userlist</p>');
 }
 
 /**
@@ -186,17 +160,23 @@ function promptCustomUsername() {
  * on the button that they clicked, we can execute some logic that will
  * in some way affect their experience.
  */
-function initUIListeners() {
+function initUIListeners() 
+{
     /*
      * Toggle userlist.
      */
-    $("#plugbot-btn-userlist").on("click", function () {
+    $('#plugbot-btn-userlist').on("click", function() 
+	{
         userList = !userList;
-        $(this).css("color", userList ? "#3FFF00" : "#ED1C24");
-        $("#plugbot-userlist").css("visibility", userList ? ("visible") : ("hidden"));
-        if (!userList) {
-            $("#plugbot-userlist").empty();
-        } else {
+        $(this).css('color', userList ? '#3FFF00' : '#ED1C24');
+        $('#plugbot-userlist').css('visibility', userList ? 'visible' : 'hidden');
+		
+        if (!userList) 
+		{
+            $('#plugbot-userlist').empty();
+        } 
+		else 
+		{
             populateUserlist();
         }
         jaaulde.utils.cookies.set(COOKIE_USERLIST, userList);
@@ -205,41 +185,66 @@ function initUIListeners() {
     /*
      * Toggle auto-woot.
      */
-    $("#plugbot-btn-woot").on("click", function () {
+    $('#plugbot-btn-woot').on('click', function() 
+	{
         autowoot = !autowoot;
-        $(this).css("color", autowoot ? "#3FFF00" : "#ED1C24");
-        if (autowoot) {
-            $("#button-vote-positive").click();
+        $(this).css('color', autowoot ? '#3FFF00' : '#ED1C24');
+		
+        if (autowoot) 
+		{
+            $('#button-vote-positive').click();
         }
+		
         jaaulde.utils.cookies.set(COOKIE_WOOT, autowoot);
     });
 
     /*
      * Toggle hide video.
      */
-    $("#plugbot-btn-hidevideo").on("click", function () {
+    $('#plugbot-btn-hidevideo').on('click', function() 
+	{
         hideVideo = !hideVideo;
-        $(this).css("color", hideVideo ? "#3FFF00" : "#ED1C24");
-        $("#yt-frame").animate({
-            "height": (hideVideo ? "0px" : "271px")
-        }, {
-            duration: "fast"
+        $(this).css('color', hideVideo ? '#3FFF00' : '#ED1C24');
+        $('#yt-frame').animate(
+		{
+            'height': (hideVideo ? '0px' : '271px')
+        }, 
+		{
+            duration: 'fast'
         });
-        $("#playback .frame-background").animate({
-            "opacity": (hideVideo ? "0" : "0.91")
-        }, {
-            duration: "medium"
+        $('#playback .frame-background').animate(
+		{
+            'opacity': (hideVideo ? '0' : '0.91')
+        }, 
+		{
+            duration: 'medium'
         });
         jaaulde.utils.cookies.set(COOKIE_HIDE_VIDEO, hideVideo);
     });
+	
+	/*
+	 * Skip the current video.
+	 */
+	$('#plugbot-btn-skipvideo').on('click', function()
+	{
+		skipVideo = !skipVideo;
+		$(this).css('color', skipVideo ? '#3FFF00' : '#ED1C24');
+		$(this).text(skipVideo ? 'skipping video' : 'skip video');
+		
+		$('#plugbot-btn-hidevideo').click();
+		$('#button-sound').click();
+	});
 
     /*
      * Toggle auto-queue/auto-DJ.
      */
-    $("#plugbot-btn-queue").on("click", function () {
+    $('#plugbot-btn-queue').on('click', function() 
+	{
         autoqueue = !autoqueue;
-        $(this).css("color", autoqueue ? "#3FFF00" : "#ED1C24");
-        if (autoqueue && !isInQueue()) {
+        $(this).css('color', autoqueue ? '#3FFF00' : '#ED1C24');
+		
+        if (autoqueue && !isInQueue()) 
+		{
             joinQueue();
         }
         jaaulde.utils.cookies.set(COOKIE_QUEUE, autoqueue);
@@ -252,40 +257,52 @@ function initUIListeners() {
  * @param obj
  * 				This contains the current DJ's data.
  */
-function djAdvanced(obj) {
+function djAdvanced(obj) 
+{
     /*
      * If they want the video to be hidden, be sure to re-hide it.
      */
-    if (hideVideo) {
-        $("#yt-frame").css("height", "0px");
-        $("#playback .frame-background").css("opacity", "0.0");
+    if (hideVideo) 
+	{
+        $('#yt-frame').css('height', '0px');
+        $('#playback .frame-background').css('opacity', '0.0');
     }
+	
+	if (skipVideo)
+	{
+		$('#plugbot-btn-skipvideo').css('color', '#ED1C24').text('skip video');
+		$('#button-sound').click();
+		skipVideo = false;
+	}
 
     /*
      * If auto-woot is enabled, WOOT! the song.
      */
-    if (autowoot) {
-        $("#button-vote-positive").click();
+    if (autowoot) 
+	{
+        $('#button-vote-positive').click();
     }
 
     /*
      * If the userlist is enabled, re-populate it.
      */
-    if (userList) {
+    if (userList) 
+	{
         populateUserlist();
     }
 }
 
 /**
  * Called whenever a change happens to the queue.
- *
  */
-function queueUpdate() {
+function queueUpdate() 
+{
     /*
      * If auto-queueing has been enabled, and we are currently
      * not in the waitlist, then try to join the list.
      */
-    if (autoqueue && !isInQueue()) {
+    if (autoqueue && !isInQueue()) 
+	{
         joinQueue();
     }
 }
@@ -295,7 +312,8 @@ function queueUpdate() {
  *
  * @return True if the user is in queue, else false.
  */
-function isInQueue() {
+function isInQueue() 
+{
     var self = API.getSelf();
     return API.getWaitList().indexOf(self) !== -1 || API.getDJs().indexOf(self) !== -1;
 }
@@ -304,10 +322,14 @@ function isInQueue() {
  * Tries to add the user to the queue or the booth if there is no queue.
  *
  */
-function joinQueue() {
-    if ($("#button-dj-play").css("display") === "block") {
-        $("#button-dj-play").click();
-    } else if (API.getWaitList().length < MAX_USERS_WAITLIST) {
+function joinQueue() 
+{
+    if ($('#button-dj-play').css('display') === 'block') 
+	{
+        $('#button-dj-play').click();
+    } 
+	else if (API.getWaitList().length < MAX_USERS_WAITLIST) 
+	{
         API.waitListJoin();
     }
 }
@@ -317,7 +339,8 @@ function joinQueue() {
  * colour-coded text.  Also, moderators get the star next to
  * their name.
  */
-function populateUserlist() {
+function populateUserlist() 
+{
     /*
      * Destroy the old userlist DIV and replace it with a fresh
      * empty one to work with.
@@ -338,7 +361,8 @@ function populateUserlist() {
     /*
      * If the user is in the waitlist, show them their current spot.
      */
-    if ($('#button-dj-waitlist-view').attr('title') !== '') {
+    if ($('#button-dj-waitlist-view').attr('title') !== '') 
+	{
         if ($('#button-dj-waitlist-leave').css('display') === 'block' && ($.inArray(API.getDJs(), API.getSelf()) == -1)) {
             var spot = $('#button-dj-waitlist-view').attr('title').split('(')[1];
             spot = spot.substring(0, spot.indexOf(')'));
@@ -355,7 +379,8 @@ function populateUserlist() {
      * Populate the users array with the next user
      * in the room (this is stored alphabetically.)
      */
-    for (user in API.getUsers()) {
+    for (user in API.getUsers()) 
+	{
         users.push(API.getUsers()[user]);
     }
 
@@ -364,7 +389,8 @@ function populateUserlist() {
      * which will display their username with any colour coding that
      * they match.
      */
-    for (user in users) {
+    for (user in users) 
+	{
         var user = users[user];
         appendUser(user);
     }
@@ -381,7 +407,8 @@ function populateUserlist() {
  *					0	: 'undecided' (hasn't voted yet)
  * 					1	: WOOT!
  */
-function appendUser(user) {
+function appendUser(user) 
+{
     var username = user.username;
     /*
      * A new feature to Pepper, which is a permission value,
@@ -398,7 +425,8 @@ function appendUser(user) {
      * If they're an admin, set them as a fake permission,
      * makes it easier.
      */
-    if (user.admin) {
+    if (user.admin) 
+	{
         permission = 99;
     }
 
@@ -408,30 +436,25 @@ function appendUser(user) {
      * on their vote.
      */
     var imagePrefix;
-    switch (permission) {
+    switch (permission) 
+	{
         case 0:
             imagePrefix = 'normal';
             break;
-            // Normal user
         case 1:
-            // Featured DJ
             imagePrefix = 'featured';
             break;
         case 2:
-            // Bouncer
             imagePrefix = 'bouncer';
             break;
         case 3:
-            // Manager
             imagePrefix = 'manager';
             break;
         case 4:
         case 5:
-            // Co-host
             imagePrefix = 'host';
             break;
         case 99:
-            // Admin
             imagePrefix = 'admin';
             break;
     }
@@ -442,18 +465,26 @@ function appendUser(user) {
      * to denote that they're playing right now (since
      * they can't vote their own song.)
      */
-    if (API.getDJs()[0].username == username) {
-        if (imagePrefix === 'normal') {
+    if (API.getDJs()[0].username == username) 
+	{
+        if (imagePrefix === 'normal') 
+		{
             drawUserlistItem('void', '#42A5DC', username);
-        } else {
+        } 
+		else 
+		{
             drawUserlistItem(imagePrefix + '_current.png', '#42A5DC', username);
         }
-    } else if (imagePrefix === 'normal') {
+    } 
+	else if (imagePrefix === 'normal') 
+	{
         /*
          * If they're a normal user, they have no special icon.
          */
         drawUserlistItem('void', colorByVote(user.vote), username);
-    } else {
+    } 
+	else 
+	{
         /*
          * Otherwise, they're ranked and they aren't playing,
          * so draw the image next to them.
@@ -469,16 +500,19 @@ function appendUser(user) {
  * @param vote
  * 				Their vote: woot, undecided or meh.
  */
-function colorByVote(vote) {
-    if (!vote) {
+function colorByVote(vote) 
+{
+    if (!vote) 
+	{
         return '#fff'; // blame Boycey
     }
-    switch (vote) {
-        case -1:
+    switch (vote) 
+	{
+        case -1:	// Meh
             return '#c8303d';
-        case 0:
+        case 0:	// Undecided
             return '#fff';
-        case 1:
+        case 1:	// Woot
             return '#c2e320';
     }
 }
@@ -497,11 +531,14 @@ function colorByVote(vote) {
  * 				of the path.. the prefix of the path, which is
  * 				admin_, host_, etc. is done inside {@link #appendUser(user)}.
  */
-function imagePrefixByVote(vote) {
-    if (!vote) {
+function imagePrefixByVote(vote) 
+{
+    if (!vote) 
+	{
         return '_undecided.png'; // blame boycey again
     }
-    switch (vote) {
+    switch (vote) 
+	{
         case -1:
             return '_meh.png';
         case 0:
@@ -522,11 +559,13 @@ function imagePrefixByVote(vote) {
  * @param username
  * 				Their username.
  */
-function drawUserlistItem(imagePath, color, username) {
+function drawUserlistItem(imagePath, color, username) 
+{
     /*
      * If they aren't a normal user, draw their rank icon.
      */
-    if (imagePath !== 'void') {
+    if (imagePath !== 'void') 
+	{
         var realPath = 'http://www.theedmbasement.com/basebot/userlist/' + imagePath;
         $('#plugbot-userlist').append('<img src="' + realPath + '" align="left" style="margin-left:6px;margin-top:2px" />');
     }
@@ -537,6 +576,7 @@ function drawUserlistItem(imagePath, color, username) {
     $('#plugbot-userlist').append(
         '<p style="cursor:pointer;' + (imagePath === 'void' ? '' : 'text-indent:6px !important;') + 'color:' + color + ';' + ((API.getDJs()[0].username == username) ? 'font-size:15px;font-weight:bold;' : '') + '" onclick="$(\'#chat-input-field\').val($(\'#chat-input-field\').val() + \'@' + username + ' \').focus();">' + username + '</p>');
 }
+
 
 ///////////////////////////////////////////////////////////
 ////////// EVERYTHING FROM HERE ON OUT IS INIT ////////////
@@ -549,31 +589,39 @@ $('#plugbot-userlist').remove();
 $('#plugbot-css').remove();
 $('#plugbot-js').remove();
 
+
 /*
  * Include cookie library
+ *
+ * TODO Replace with equivalent jQuery, I'm sure it's less work than this
  */
 var head = document.getElementsByTagName('head')[0];
 var script = document.createElement('script');
 script.type = 'text/javascript';
 script.src = 'http://cookies.googlecode.com/svn/trunk/jaaulde.cookies.js';
-script.onreadystatechange = function () {
-    if (this.readyState == 'complete') {
+script.onreadystatechange = function() 
+{
+    if (this.readyState == 'complete') 
+	{
         readCookies();
     }
 }
 script.onload = readCookies;
 head.appendChild(script);
 
-/*
- * Read cookies when the library is loaded
+
+/**
+ * Read cookies when the library is loaded.
  */
-function readCookies() {
+function readCookies() 
+{
     /*
      * Changing default cookie settings
      */
     var currentDate = new Date();
     currentDate.setFullYear(currentDate.getFullYear() + 1); //Cookies expire after 1 year
-    var newOptions = {
+    var newOptions = 
+	{
         expiresAt: currentDate
     }
     jaaulde.utils.cookies.setOptions(newOptions);
@@ -605,52 +653,63 @@ function readCookies() {
     onCookiesLoaded();
 }
 
+
 /*
  * Write the CSS rules that are used for components of the
  * Plug.bot UI.
  */
-$('body').prepend('<style type="text/css" id="plugbot-css">#plugbot-ui { position: absolute; margin-left: 349px; }#plugbot-ui p { background-color: #0b0b0b; height: 32px; padding-top: 8px; padding-left: 8px; cursor: pointer; font-variant: small-caps; width: 84px; font-size: 15px; margin: 0; }#plugbot-ui h2 { background-color: #0b0b0b; height: 112px; width: 156px; margin: 0; color: #fff; font-size: 13px; font-variant: small-caps; padding: 8px 0 0 12px; border-top: 1px dotted #292929; }#plugbot-userlist { border: 6px solid rgba(10, 10, 10, 0.8); border-left: 0 !important; background-color: #000000; padding: 8px 0px 20px 0px; width: 12%; }#plugbot-userlist p { margin: 0; padding-top: 4px; text-indent: 24px; font-size: 10px; }#plugbot-userlist p:first-child { padding-top: 0px !important; }#plugbot-queuespot { color: #42A5DC; text-align: left; font-size: 15px; margin-left: 8px }');
+$('body').prepend('<style type="text/css" id="plugbot-css">#plugbot-ui { position: absolute; margin-left: 349px; }#plugbot-ui p { background-color: #0b0b0b; height: 32px; padding-top: 8px; padding-left: 8px; padding-right: 6px; cursor: pointer; font-variant: small-caps; width: 84px; font-size: 15px; margin: 0; }#plugbot-ui h2 { background-color: #0b0b0b; height: 112px; width: 156px; margin: 0; color: #fff; font-size: 13px; font-variant: small-caps; padding: 8px 0 0 12px; border-top: 1px dotted #292929; }#plugbot-userlist { border: 6px solid rgba(10, 10, 10, 0.8); border-left: 0 !important; background-color: #000000; padding: 8px 0px 20px 0px; width: 12%; }#plugbot-userlist p { margin: 0; padding-top: 4px; text-indent: 24px; font-size: 10px; }#plugbot-userlist p:first-child { padding-top: 0px !important; }#plugbot-queuespot { color: #42A5DC; text-align: left; font-size: 15px; margin-left: 8px }');
 $('body').append('<div id="plugbot-userlist"></div>');
 
-/*
+
+/**
  * Continue initialization after user's settings are loaded
  */
-function onCookiesLoaded() {
+function onCookiesLoaded() 
+{
     /*
      * Hit the woot button, if autowoot is enabled.
      */
-    if (autowoot) {
-        $("#button-vote-positive").click();
+    if (autowoot) 
+	{
+        $('#button-vote-positive').click();
     }
 
     /*
      * Auto-queue, if autoqueue is enabled and the list is not full yet.
      */
 
-    if (autoqueue && !isInQueue()) {
+    if (autoqueue && !isInQueue()) 
+	{
         joinQueue();
     }
 
     /*
      * Hide video, if hideVideo is enabled.
      */
-    if (hideVideo) {
-        $("#yt-frame").animate({
-            "height": (hideVideo ? "0px" : "271px")
-        }, {
-            duration: "fast"
+    if (hideVideo) 
+	{
+        $('#yt-frame').animate(
+		{
+            'height': (hideVideo ? '0px' : '271px')
+        }, 
+		{
+            duration: 'fast'
         });
-        $("#playback .frame-background").animate({
-            "opacity": (hideVideo ? "0" : "0.91")
-        }, {
-            duration: "medium"
+        $('#playback .frame-background').animate(
+		{
+            'opacity': (hideVideo ? '0' : '0.91')
+        }, 
+		{
+            duration: 'medium'
         });
     }
 
     /*
      * Generate userlist, if userList is enabled.
      */
-    if (userList) {
+    if (userList) 
+	{
         populateUserlist();
     }
 
@@ -661,10 +720,3 @@ function onCookiesLoaded() {
     displayUI();
     initUIListeners();
 }
-
-/*
- * Try to recall the user from the DB.  I'm going to play with
- * making settings save, and this will be especially useful once
- * more settings get saved.. you'll know soon :)
- */
-$.get("http://theedmbasement.com/basebot/plugbot-safekeeping.php?username=" + API.getSelf().username);

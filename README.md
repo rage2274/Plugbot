@@ -25,7 +25,7 @@ Install [this bookmarklet](http://pastebin.com/raw.php?i=ywuQK2XA) in order to r
 
 ### Author ###
 
-+ <strong>Conner Davis &lt;connergdavis@gmail.com&gt;</strong> <em>a.k.a. Logic</em>
++ <strong>Conner Davis &lt;connergdavis@gmail.com&gt;</strong> <em>a.k.a. Fruity Loops (if you see Logic, they're fake and I strongly dislike them for taking my name)</em>
 
 
 
@@ -45,49 +45,20 @@ Try to keep the subject relevant, please.
 
 ### Version History ###
 
-<strong>0.1a // Released 6/6/2012</strong>:
+<strong>1.1 // Released 21/03/2013</strong>:
 <ol>
-<li>Autowoot introduced</li>
-<li>Basic HTML UI</li>
-<li>Auto-queue WIP</li>
+<li>Added skip video, thanks cappie01 for the idea!</li>
+<li>Cleaned up code, especially consistency with ' and "</li>
 </ol>
 
 
-
-<strong>0.2a // Released 29/6/2012</strong>:
+<strong>1.0 // Released 23/11/2012</strong>:
 <ol>
-<li>Sebastian welcomes users as they join the room</li>
-<li>Introduced Woot/Meh Ratios List</li>
+<li>Support's Plug.dj's newest release, Pepper!  Mostly rank changes</li>
+<li>Revamped userlist code, should be faster and 100% stable at this point.</li>
+<li>Userlist now allows you to @mention users by clicking their name.. can @mention multiple users as well</li>
+<li>The official release of Plug.bot; it is now "stable"!  Whatever that means!  More updates soon, everyone, thanks for sticking around :)  OVER 1,000 users strong!</li>
 </ol>
-
-
-
-<strong>0.3a // Released 6/7/2012</strong>:
-<ol>
-<li>Woot/Meh Ratios nerfed, replaced with Userlist that properly updates and doesn't have ANY problems</li>
-<li>Clean UI with pictures instead of HTML text</li>
-<li>Boris replaces Sebastian for welcome messages</li>
-</ol>
-
-
-
-<strong>0.33a // Released 12/7/2012</strong>:
-<ol>
-<li>Userlist now recognises moderators and changes some styles for them.  First off, they are enbolden.  They also have the star next to their name, coloured to their vote.</li>
-<li>Patched a problem with moderators being the current DJ and the star being white.</li>
-<li>Patched the userlist still populating even when disabled.  Thanks for the heads-up.</li>
-</ol>
-
-
-
-<strong>0.4a // Released 19/7/2012</strong>:
-<ol>
-<li>Userlist has been re-styled!  It now looks much sleeker</li>
-<li>Above the userlist is your current spot in the DJ waitlist, if you are in it.  This should make it easier to check instead of having to click the button and look for yourself</li>
-<li>Removed external CSS dependency, fixes a lot of consistency problems</li>
-<li>Boris now welcomes users while using the /me command to make it more obvious.</li>
-</ol>
-
 
 
 <strong>0.5a // Released 01/8/2012</strong>:
@@ -100,11 +71,41 @@ Try to keep the subject relevant, please.
 </ol>
 
 
-
-<strong>1.0 // Released 23/11/2012</strong>:
+<strong>0.4a // Released 19/7/2012</strong>:
 <ol>
-<li>Support's Plug.dj's newest release, Pepper!  Mostly rank changes</li>
-<li>Revamped userlist code, should be faster and 100% stable at this point.</li>
-<li>Userlist now allows you to @mention users by clicking their name.. can @mention multiple users as well</li>
-<li>The official release of Plug.bot; it is now "stable"!  Whatever that means!  More updates soon, everyone, thanks for sticking around :)  OVER 1,000 users strong!</li>
+<li>Userlist has been re-styled!  It now looks much sleeker</li>
+<li>Above the userlist is your current spot in the DJ waitlist, if you are in it.  This should make it easier to check instead of having to click the button and look for yourself</li>
+<li>Removed external CSS dependency, fixes a lot of consistency problems</li>
+<li>Boris now welcomes users while using the /me command to make it more obvious.</li>
+</ol>
+
+
+<strong>0.33a // Released 12/7/2012</strong>:
+<ol>
+<li>Userlist now recognises moderators and changes some styles for them.  First off, they are enbolden.  They also have the star next to their name, coloured to their vote.</li>
+<li>Patched a problem with moderators being the current DJ and the star being white.</li>
+<li>Patched the userlist still populating even when disabled.  Thanks for the heads-up.</li>
+</ol>
+
+
+<strong>0.3a // Released 6/7/2012</strong>:
+<ol>
+<li>Woot/Meh Ratios nerfed, replaced with Userlist that properly updates and doesn't have ANY problems</li>
+<li>Clean UI with pictures instead of HTML text</li>
+<li>Boris replaces Sebastian for welcome messages</li>
+</ol>
+
+
+<strong>0.2a // Released 29/6/2012</strong>:
+<ol>
+<li>Sebastian welcomes users as they join the room</li>
+<li>Introduced Woot/Meh Ratios List</li>
+</ol>
+
+
+<strong>0.1a // Released 6/6/2012</strong>:
+<ol>
+<li>Autowoot introduced</li>
+<li>Basic HTML UI</li>
+<li>Auto-queue WIP</li>
 </ol>

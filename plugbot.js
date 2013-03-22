@@ -227,9 +227,9 @@ function initUIListeners()
 	 */
 	$('#plugbot-btn-skipvideo').on('click', function()
 	{
-		skipVideo = !skipVideo;
-		$(this).css('color', skipVideo ? '#3FFF00' : '#ED1C24');
-		$(this).text(skipVideo ? 'skipping video' : 'skip video');
+		skippingVideo = !skippingVideo;
+		$(this).css('color', skippingVideo ? '#3FFF00' : '#ED1C24');
+		$(this).text(skippingVideo ? 'skipping video' : 'skip video');
 		
 		$('#plugbot-btn-hidevideo').click();
 		$('#button-sound').click();
@@ -268,11 +268,11 @@ function djAdvanced(obj)
         $('#playback .frame-background').css('opacity', '0.0');
     }
 	
-	if (skipVideo)
+	if (skippingVideo)
 	{
 		$('#plugbot-btn-skipvideo').css('color', '#ED1C24').text('skip video');
 		$('#button-sound').click();
-		skipVideo = false;
+		skippingVideo = false;
 	}
 
     /*

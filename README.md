@@ -11,7 +11,7 @@ A collection of extensions to the growing online DJing website, <a href="http://
 + User list  :  A dynamic list of every user in the room, colour-coded based on their current vote.  Green = Woot, Red = Meh, White = No vote  Special usergroups are denoted by the icon you'd normally see in the chat
 + Button UI  :  Allows you to easily configure your Plug.bot experience;  enable or disable each of its features at the click of a button.  Red = Off, Green = On
 + Hide video  :  Allows you to hide videos from your view
-+ Custom username FX  :  Now allows you to change some user's names in the chatbox to a different colour
++ Skip video  : Allows the user to 'skip' the next video in the room -- this means mute the audio and hide the video, and then automate it to re-show and unmuted when the video is over
 + Open-source code  :  All Plug.bot code is available in this repo, no cost, no secrecy
 
 
@@ -49,6 +49,7 @@ Try to keep the subject relevant, please.
 <ol>
 <li>Added skip video, thanks cappie01 for the idea!</li>
 <li>Cleaned up code, especially consistency with ' and "</li>
+<li>Nerfed custom username FX</li>
 </ol>
 
 

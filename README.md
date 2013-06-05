@@ -1,45 +1,46 @@
 ## Plug.bot
 
-A collection of extensions to the growing online DJing website, <a href="http://plug.dj">plug.dj</a>.  The source code is written in JavaScript utilising the Plug.dj API anywhere possible.  Easily embeddable as a bookmark in your favourite browser.  Initially inspired by TechGuard's AutoWoot script from back in April '12.  
+A collection of extensions to the growing online DJing website, <a href="http://plug.dj">plug.dj</a>.  The source code is written in JavaScript and uses the Plug.dj API anywhere possible.  Easily embeddable as a bookmark in your favorite browser.  Initially inspired by TechGuard's AutoWoot script from back in April '12.  
 
+<strong>I'll be writing a 1.2 version of the source later in June.  Stay tuned</strong>
 
 
 ### Features List ###
 
 + Auto-woot  :  Automatically WOOT! each song as it is played
-+ Auto-queue/auto-DJ  :  Automatically re-append yourself to the DJ Waitlist once you've been moved back to the crowd
-+ User list  :  A dynamic list of every user in the room, colour-coded based on their current vote.  Green = Woot, Red = Meh, White = No vote  Special usergroups are denoted by the icon you'd normally see in the chat
++ Auto-queue :  Automatically add yourself back to the DJ Waitlist once you've been moved back into the crowd
++ User list  :  A dynamic list of every user in the room, color-coded by their current vote.  Green = "Woot", Red = "Meh", White = No vote  Special usergroups (i.e. moderator) are denoted by the icon you'd normally see in the chat
 + Button UI  :  Allows you to easily configure your Plug.bot experience;  enable or disable each of its features at the click of a button.  Red = Off, Green = On
 + Hide video  :  Allows you to hide videos from your view
 + Skip video  : Allows the user to 'skip' the next video in the room -- this means mute the audio and hide the video, and then automate it to re-show and unmuted when the video is over
-+ Open-source code  :  All Plug.bot code is available in this repo, no cost, no secrecy
++ Community-driven  :  everything I do is ideas from you guys.  Everyone is encourage to contribute ideas, problems, and solutions as much as they can
 
 
 
 ### Installation ###
 
 In order to install, just click the link below then copy the text you see there (javascript: etc.) to your bookmarks bar.  You can add the bookmark manually or just drag the text straight there, it doesn't matter.  Enjoy!
-Install [this bookmarklet](http://pastebin.com/raw.php?i=ywuQK2XA) in order to run Plug.bot.
+Install [this bookmarklet](http://pastebin.com/raw.php?i=ywuQK2XA) in order to run Plug.bot.  If you have a problem with installing the bookmarklet, just Google it, there are plenty of solutions to be found.  Please don't ask me personally.
 
 
 
 ### Author ###
 
-+ <strong>Conner Davis &lt;connergdavis@gmail.com&gt;</strong> <em>a.k.a. Fruity Loops (if you see Logic, they're fake and I strongly dislike them for taking my name)</em>
++ <strong>Conner Davis &lt;connergdavis@gmail.com&gt;</strong> <em>a.k.a. Fruity Loops (if you see Logic, they're fake and I strongly dislike them for taking my original name)</em>
 
 
 
 ### Copyright Notice ###
 
-Plug.bot is licensed under the GNU General Public License, or GPL.  Essentially, all I require of you if you want to redistribute Plug.bot's source code, is that you retain the three first comments in the files composing Plug.bot:  firstly, the GNU GPL statement.  Secondly, the statement I make myself about usage.  And thirdly, the author and purposes comment that show who originally made the content -- me.  So long as you abide by that rule and provide a link back to this repository, you are free to redistribute it as you want!  Thanks for playing fair ^.^
+Plug.bot is licensed under the GNU General Public License, or GPL.  Essentially, all I require of you if you want to redistribute Plug.bot's source code, is that you retain the three first comments in the files composing Plug.bot:  firstly, the GNU GPL statement.  Secondly, the statement I make myself about usage.  And thirdly, the author and purposes comment that show who originally made the content -- me.  So long as you abide by that rule and provide a link back to this repository, you are free to redistribute it as you want!  Thanks for playing fair..
 
 
 
-### Problems? Bugs? Questions about life? ###
+### For any question you can't answer that isn't "How do I install Plug.bot" ###
 
 connergdavis@gmail.com
 
-Try to keep the subject relevant, please.  
+Try to keep the 'subject' field relevant, please.  
 
 
 

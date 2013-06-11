@@ -1,113 +1,63 @@
 ## Plug.bot
 
-A collection of extensions to the growing online DJing website, <a href="http://plug.dj">plug.dj</a>.  The source code is written in JavaScript and uses the Plug.dj API anywhere possible.  Easily embeddable as a bookmark in your favorite browser.  Initially inspired by TechGuard's AutoWoot script from back in April '12.  
+A collection of extensions to the growing online DJing website, <a href="http://plug.dj">plug.dj</a>.  The source code is written in JavaScript and uses the Plug.dj API anywhere possible.  Easily embeddable as a bookmark in your favorite browser.  Initially inspired by TechGuard's AutoWoot script from April 2012.
 
-<strong>I'll be writing a 1.2 version of the source later in June.  Stay tuned</strong>
+<strong>I'll be writing a new version of the source later in June.  Stay tuned.  Also, it was Plug.bot's birthday on June 6, sweet!  Thanks everybody!</strong>
 
 
 ### Features List ###
 
-+ Auto-woot  :  Automatically WOOT! each song as it is played
-+ Auto-queue :  Automatically add yourself back to the DJ Waitlist once you've been moved back into the crowd
-+ User list  :  A dynamic list of every user in the room, color-coded by their current vote.  Green = "Woot", Red = "Meh", White = No vote  Special usergroups (i.e. moderator) are denoted by the icon you'd normally see in the chat
-+ Button UI  :  Allows you to easily configure your Plug.bot experience;  enable or disable each of its features at the click of a button.  Red = Off, Green = On
-+ Hide video  :  Allows you to hide videos from your view
-+ Skip video  : Allows the user to 'skip' the next video in the room -- this means mute the audio and hide the video, and then automate it to re-show and unmuted when the video is over
-+ Community-driven  :  everything I do is ideas from you guys.  Everyone is encourage to contribute ideas, problems, and solutions as much as they can
-
+Feature | Purpose
+--------|--------
+Auto Woot | Automatically WOOT! each song as it is played
+Auto Queue | Automatically add yourself back to the DJ Waitlist once you've been moved back into the crowd
+Userlist | A dynamic list of every user in the room, color-coded by their current vote.  Green = "Woot", Red = "Meh", White = No vote  Special usergroups (i.e. moderator) are denoted by the icon you'd normally see in the chat
+Toggle UI | Allows you to easily configure your Plug.bot experience;  enable or disable each of its features at the click of a button.  Red = Off, Green = On
+Hide Video | Hides videos from view on the site -- this is in effect until disabled
+Skip Video | This is exactly like hide video, except it additionally mutes the audio and will automatically re-enable everything after the current video is over
 
 
 ### Installation ###
 
-In order to install, just click the link below then copy the text you see there (javascript: etc.) to your bookmarks bar.  You can add the bookmark manually or just drag the text straight there, it doesn't matter.  Enjoy!
-Install [this bookmarklet](http://pastebin.com/raw.php?i=ywuQK2XA) in order to run Plug.bot.  If you have a problem with installing the bookmarklet, just Google it, there are plenty of solutions to be found.  Please don't ask me personally.
+Drag the text from the link below (it will look like code) into your Bookmarks Bar and it should make a new bookmark.  You can label it yourself, it doesn't matter.  Then just click the bookmark whenever you're on Plug.dj and you're good to go.
+
+Install [this bookmarklet](http://pastebin.com/raw.php?i=ywuQK2XA) in order to run Plug.bot.  If you have a problem with installing the bookmarklet, just Google it, there are plenty of solutions to be found.  DO NOT e-mail me about it.  The ONLY time the bookmark will ever not work is if Github is down, and that's pretty rare so don't be worried (it happened for less than 24 hours last year and then it was back to normal.)
 
 
 
 ### Author ###
 
-+ <strong>Conner Davis &lt;connergdavis@gmail.com&gt;</strong> <em>a.k.a. Fruity Loops (if you see Logic, they're fake and I strongly dislike them for taking my original name)</em>
++ <strong>Conner Davis &lt;connergdavis@gmail.com&gt;</strong> <em>a.k.a. Fruity Loops</em>  
+
+If you knew me as Logic, you can feel free to get mad at them for taking my original name.
 
 
 
 ### Copyright Notice ###
 
-Plug.bot is licensed under the GNU General Public License, or GPL.  Essentially, all I require of you if you want to redistribute Plug.bot's source code, is that you retain the three first comments in the files composing Plug.bot:  firstly, the GNU GPL statement.  Secondly, the statement I make myself about usage.  And thirdly, the author and purposes comment that show who originally made the content -- me.  So long as you abide by that rule and provide a link back to this repository, you are free to redistribute it as you want!  Thanks for playing fair..
+Plug.bot is licensed under the GNU General Public License, or GPL.  If you want to redistribute the source (for free, of course!) just retain the first 38 lines, which are all header comments.  So long as you abide by that rule and provide a link directly (no bit.ly, etc.) to <a href="https://github.com/connergdavis/Plugbot">https://github.com/connergdavis/Plugbot</a> wherever you have your version of the software, you are free to redistribute it (FOR FREE!!) as your heart desires!  Thanks for playing fair.
 
 
 
-### For any question you can't answer that isn't "How do I install Plug.bot" ###
+### For any question that isn't "How do I install Plug.bot" ###
 
 connergdavis@gmail.com
 
-Try to keep the 'subject' field relevant, please.  
+Seriously.  If you e-mail me about a problem installing Plug.bot, it's getting deleted without a second thought.  If you have a legitimate inquiry about something related to the project, THAT'S something I'll read. 
 
 
 
 ### Version History ###
 
-<strong>1.1 // Released 21/03/2013</strong>:
-<ol>
-<li>Added skip video, thanks cappie01 for the idea!</li>
-<li>Cleaned up code, especially consistency with ' and "</li>
-<li>Nerfed custom username FX</li>
-</ol>
 
-
-<strong>1.0 // Released 23/11/2012</strong>:
-<ol>
-<li>Support's Plug.dj's newest release, Pepper!  Mostly rank changes</li>
-<li>Revamped userlist code, should be faster and 100% stable at this point.</li>
-<li>Userlist now allows you to @mention users by clicking their name.. can @mention multiple users as well</li>
-<li>The official release of Plug.bot; it is now "stable"!  Whatever that means!  More updates soon, everyone, thanks for sticking around :)  OVER 1,000 users strong!</li>
-</ol>
-
-
-<strong>0.5a // Released 01/8/2012</strong>:
-<ol>
-<li>Userlist font is smaller due to more users being in rooms.</li>
-<li>Hide video now lasts until you disable it, rather than resetting each time a new song comes around</li>
-<li>Moved the UI to be beside the chat for more space for buttons</li>
-<li>Buttons are now HTML-generated instead of pictures</li>
-<li>Custom username FX now allows you to highlight specific people with custom colours</li>
-</ol>
-
-
-<strong>0.4a // Released 19/7/2012</strong>:
-<ol>
-<li>Userlist has been re-styled!  It now looks much sleeker</li>
-<li>Above the userlist is your current spot in the DJ waitlist, if you are in it.  This should make it easier to check instead of having to click the button and look for yourself</li>
-<li>Removed external CSS dependency, fixes a lot of consistency problems</li>
-<li>Boris now welcomes users while using the /me command to make it more obvious.</li>
-</ol>
-
-
-<strong>0.33a // Released 12/7/2012</strong>:
-<ol>
-<li>Userlist now recognises moderators and changes some styles for them.  First off, they are enbolden.  They also have the star next to their name, coloured to their vote.</li>
-<li>Patched a problem with moderators being the current DJ and the star being white.</li>
-<li>Patched the userlist still populating even when disabled.  Thanks for the heads-up.</li>
-</ol>
-
-
-<strong>0.3a // Released 6/7/2012</strong>:
-<ol>
-<li>Woot/Meh Ratios nerfed, replaced with Userlist that properly updates and doesn't have ANY problems</li>
-<li>Clean UI with pictures instead of HTML text</li>
-<li>Boris replaces Sebastian for welcome messages</li>
-</ol>
-
-
-<strong>0.2a // Released 29/6/2012</strong>:
-<ol>
-<li>Sebastian welcomes users as they join the room</li>
-<li>Introduced Woot/Meh Ratios List</li>
-</ol>
-
-
-<strong>0.1a // Released 6/6/2012</strong>:
-<ol>
-<li>Autowoot introduced</li>
-<li>Basic HTML UI</li>
-<li>Auto-queue WIP</li>
-</ol>
+Version | Release Date | Changes
+--------|--------------|--------
+2.0 | June 2013 | <ul><li>Celebrating Plug.bot's birthday</li><li>??</li></ul>
+1.1 | March 21, 2013 | <ul><li>Added skip video, cappie01's idea</li><li>Cleaned up code consistency</li><li>Removed custom username FX (it was bad anyway)</li></ul>
+1.0 | November 23, 2012 | <ul><li>Supports Plug.dj "Pepper", the newest version, introduces mostly rank changes</li><li>Revamped userlist code, faster and completely stable at this point</li><li>Userlist now allows you to @mention users by clicking their name, you can @mention multiple users as well</li><li>Over 1,000 users now!</li></ul>
+0.5a | August 1, 2012 | <ul><li>Userlist font is smaller due to more users being in rooms, thanks Monstercat</li><li>Hide video now lasts until you disable it, rather than resetting each time a new song comes around</li><li>Moved the UI to be beside the chat for more space for buttons</li><li>Buttons are now HTML-generated instead of pictures</li><li>Custom username FX now allows you to highlight specific people with custom colors</li></ul>
+0.4a | July 19, 2012 | <ul><li>Userlist has been re-styled!  It now looks much sleeker</li><li>Above the userlist is your current spot in the DJ waitlist, if you are in it.  This should make it easier to check instead of having to click the button and look for yourself</li><li>Removed external CSS dependency, fixes a lot of consistency problems</li></ul>
+0.33a | July 12, 2012 | <ul><li>Userlist now recognizes moderators -- the color is changed, they're bold, and the little chat icon that denotes them is also on the userlist in the same spot</li><li>Patched a problem with moderators being the current DJ and the star being white</li><li>Patched the userlist still populating even when disabled</li></ul>
+0.3a | July 6, 2012 | <ul><li>Woot/Meh Ratios nerfed, replaced with Userlist that properly updates and doesn't have ANY problems</li><li>Clean UI with pictures instead of HTML text</li></ul>
+0.2a | June 29, 2012 | <ul><li>Introduced Woot/Meh Ratios List</li></ul>
+0.1a | June 6, 2012 | <ul><li>Auto Woot introduced</li><li>Basic HTML UI</li><li>Auto Queue WIP</li></ul>

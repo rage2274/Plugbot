@@ -32,7 +32,7 @@ Install [this bookmarklet](http://pastebin.com/raw.php?i=ywuQK2XA) in order to r
 
 ### Author ###
 
-+ <strong>Conner Davis &lt;connergdavis@gmail.com&gt;</strong> <em>a.k.a. Fruity Loops</em>  
++ <strong>Conner Davis &lt;connergdavis@gmail.com&gt;</strong> <em>a.k.a. Fugitive.</em>  
 
 If you knew me as Logic, you can feel free to get mad at them for taking my original name.
 

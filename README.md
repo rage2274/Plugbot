@@ -2,7 +2,7 @@
 
 A collection of extensions to the growing online DJing website, <a href="http://plug.dj">plug.dj</a>.  The source code is written in JavaScript and uses the Plug.dj API anywhere possible.  Easily embeddable as a bookmark in your favorite browser.  Initially inspired by TechGuard's AutoWoot script from April 2012.
 
-<strong>I'll be writing a new version of the source later in June.  Stay tuned.  Also, it was Plug.bot's birthday on June 6, sweet!  Thanks everybody!</strong>
+###<strong>I'm running out of ideas about what to add to Plug.bot.  If you have any ideas, e-mail me!</strong>
 
 
 ### Features List ###
@@ -57,7 +57,6 @@ Seriously.  If you e-mail me about a problem installing Plug.bot, it's getting d
 
 Version | Release Date | Changes
 --------|--------------|--------
-2.0 | June 2013 | <ul><li>Celebrating Plug.bot's birthday</li><li>??</li></ul>
 1.1 | March 21, 2013 | <ul><li>Added skip video, cappie01's idea</li><li>Cleaned up code consistency</li><li>Removed custom username FX (it was bad anyway)</li></ul>
 1.0 | November 23, 2012 | <ul><li>Supports Plug.dj "Pepper", the newest version, introduces mostly rank changes</li><li>Revamped userlist code, faster and completely stable at this point</li><li>Userlist now allows you to @mention users by clicking their name, you can @mention multiple users as well</li><li>Over 1,000 users now!</li></ul>
 0.5a | August 1, 2012 | <ul><li>Userlist font is smaller due to more users being in rooms, thanks Monstercat</li><li>Hide video now lasts until you disable it, rather than resetting each time a new song comes around</li><li>Moved the UI to be beside the chat for more space for buttons</li><li>Buttons are now HTML-generated instead of pictures</li><li>Custom username FX now allows you to highlight specific people with custom colors</li></ul>

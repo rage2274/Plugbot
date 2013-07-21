@@ -1,3 +1,5 @@
+## I have no idea what Plug.dj did, but it's a missing function in the API that's been there since day 1.  I've contacted Steven so you'll just have to wait until I get a response from him.
+
 ## Plug.bot
 
 A collection of extensions to the growing online DJing website, <a href="http://plug.dj">plug.dj</a>.  The source code is written in JavaScript and uses the Plug.dj API anywhere possible.  Easily embeddable as a bookmark in your favorite browser.  Initially inspired by TechGuard's AutoWoot script from April 2012.

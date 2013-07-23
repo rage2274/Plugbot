@@ -321,7 +321,7 @@ function queueUpdate()
  */
 function isInQueue() 
 {
-    var self = API.getAudience()[0].username
+    var self = API.getAudience()[0].username;
     return API.getWaitList().indexOf(self) !== -1 || API.getDJs().indexOf(self) !== -1;
 }
 
@@ -337,7 +337,7 @@ function joinQueue()
     } 
 	else if (API.getWaitList().length < MAX_USERS_WAITLIST) 
 	{
-        $('#button-dj-waitlist-join').click();
+       API.djJoin();
     }
 }
 

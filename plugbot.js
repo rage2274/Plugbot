@@ -321,8 +321,7 @@ function queueUpdate()
  */
 function isInQueue() 
 {
-    var self = API.getAudience()[0].username;
-    return API.getWaitList().indexOf(self) !== -1 || API.getDJs().indexOf(self) !== -1;
+    return API.getBoothPosition() !== -1 || API.getWaitListPosition() !== -1;
 }
 
 /**

@@ -1,4 +1,4 @@
-## I have no idea what Plug.dj did, but it's a missing function in the API that's been there since day 1.  I've contacted Steven so you'll just have to wait until I get a response from him.
+## We're up and running again.  Just clear your browser's cache and it should be set.  Thanks Nicolas!
 
 ## Plug.bot
 

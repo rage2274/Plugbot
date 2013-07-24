@@ -80,23 +80,23 @@ function initAPIListeners()
     /*
      * This listens in for whenever a new DJ starts playing.
      */
-    API.addEventListener(API.DJ_ADVANCE, djAdvanced);
+    API.on(API.DJ_ADVANCE, djAdvanced);
 
     /*
      * This listens for changes in the waiting list
      */
-    API.addEventListener(API.WAIT_LIST_UPDATE, queueUpdate);
+    API.on(API.WAIT_LIST_UPDATE, queueUpdate);
 
     /*
      * This listens for changes in the dj booth
      */
-    API.addEventListener(API.DJ_UPDATE, queueUpdate);
+    API.on(API.DJ_UPDATE, queueUpdate);
 
     /*
      * This listens for whenever a user in the room either WOOT!s
      * or Mehs the current song.
      */
-    API.addEventListener(API.VOTE_UPDATE, function (obj) 
+    API.on(API.VOTE_UPDATE, function (obj) 
 	{
         if (userList) 
 		{
@@ -107,7 +107,7 @@ function initAPIListeners()
     /*
      * Whenever a user joins, this listener is called.
      */
-    API.addEventListener(API.USER_JOIN, function (user) 
+    API.on(API.USER_JOIN, function (user) 
 	{
         if (userList) 
 		{
@@ -118,7 +118,7 @@ function initAPIListeners()
     /*
      * Called upon a user exiting the room.
      */
-    API.addEventListener(API.USER_LEAVE, function (user) 
+    API.on(API.USER_LEAVE, function (user) 
 	{
         if (userList) 
 		{
@@ -321,8 +321,7 @@ function queueUpdate()
  */
 function isInQueue() 
 {
-    var self = API.getSelf();
-    return API.getWaitList().indexOf(self) !== -1 || API.getDJs().indexOf(self) !== -1;
+    return API.getBoothPosition() !== -1 || API.getWaitListPosition() !== -1;
 }
 
 /**
@@ -337,7 +336,7 @@ function joinQueue()
     } 
 	else if (API.getWaitList().length < MAX_USERS_WAITLIST) 
 	{
-        API.waitListJoin();
+       API.djJoin();
     }
 }
 

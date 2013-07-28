@@ -34,7 +34,7 @@
 /*
  * NOTE:  This is 100% procedural because I can't see a reason to add classes, etc.
  *
- * @author 	Conner Davis (Fruity Loops)
+ * @author 	Conner Davis (Fugitive.) (Yes, I'm done changing my name)
  */
 /*
  * Whether the user has currently enabled auto-woot.

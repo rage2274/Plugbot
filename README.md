@@ -19,6 +19,15 @@ Hide Video | Hides videos from view on the site -- this is in effect until disab
 Skip Video | This is exactly like hide video, except it additionally mutes the audio and will automatically re-enable everything after the current video is over
 
 
+### Bugfixes ###
+
+This is where I will map out any bug fixing, in other words small issue solving that doesn't equate to a full version change.  Started September 14, 2013.
+
+Release Date | Change
+-------------|--------
+September 14, 2013 | <ul><li>Temporarily removed adding pictures to the userlist based on the user's permissions because I no longer have said pictures.  Looking to recover them or make new ones soon.</li><li>Minor tweaks in documentation.</li></ul>
+
+
 ### Installation ###
 
 Drag the text from the link below (it will look like code) into your Bookmarks Bar and it should make a new bookmark.  You can label it yourself, it doesn't matter.  Then just click the bookmark whenever you're on Plug.dj and you're good to go.

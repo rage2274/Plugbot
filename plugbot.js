@@ -34,11 +34,7 @@
 /*
  * NOTE:  This is 100% procedural because I can't see a reason to add classes, etc.
  *
-<<<<<<< HEAD
- * @author 	Conner Davis (Fugitive.) (Yes, I'm done changing my name)
-=======
  * @author 	Conner Davis (Fugitive. on Plug.dj)
->>>>>>> Temp removed userlist broken images
  */
 /*
  * Whether the user has currently enabled auto-woot.
@@ -98,17 +94,10 @@ function initAPIListeners()
     /*
      * This listens for whenever a user in the room either WOOT!s or Mehs the current song.
      */
-<<<<<<< HEAD
     API.on(API.VOTE_UPDATE, function (obj) 
 	{
         if (userList) 
 		{
-=======
-    API.on(API.VOTE_UPDATE, function (obj)
-    {
-        if (userList)
-        {
->>>>>>> Temp removed userlist broken images
             populateUserlist();
         }
     });
@@ -116,17 +105,10 @@ function initAPIListeners()
     /*
      * Whenever a user joins, this listener is called.
      */
-<<<<<<< HEAD
-    API.on(API.USER_JOIN, function (user) 
-	{
-        if (userList) 
-		{
-=======
     API.on(API.USER_JOIN, function (user)
     {
         if (userList)
         {
->>>>>>> Temp removed userlist broken images
             populateUserlist();
         }
     });
@@ -134,17 +116,10 @@ function initAPIListeners()
     /*
      * Called upon a user exiting the room.
      */
-<<<<<<< HEAD
-    API.on(API.USER_LEAVE, function (user) 
-	{
-        if (userList) 
-		{
-=======
     API.on(API.USER_LEAVE, function (user)
     {
         if (userList)
         {
->>>>>>> Temp removed userlist broken images
             populateUserlist();
         }
     });
@@ -357,17 +332,10 @@ function joinQueue()
     if ($('#button-dj-play').css('display') === 'block')
     {
         $('#button-dj-play').click();
-<<<<<<< HEAD
     } 
 	else if (API.getWaitList().length < MAX_USERS_WAITLIST) 
 	{
        API.djJoin();
-=======
-    }
-    else if (API.getWaitList().length < MAX_USERS_WAITLIST)
-    {
-        API.djJoin();
->>>>>>> Temp removed userlist broken images
     }
 }
 
@@ -395,13 +363,8 @@ function populateUserlist()
     /*
      * If the user is in the waitlist, show them their current spot.
      */
-<<<<<<< HEAD
-    if ($('#button-dj-waitlist-view').attr('title') !== '') 
-	{
-=======
     if ($('#button-dj-waitlist-view').attr('title') !== '')
     {
->>>>>>> Temp removed userlist broken images
         if ($('#button-dj-waitlist-leave').css('display') === 'block' && ($.inArray(API.getDJs(), API.getUser()) == -1)) {
             var spot = $('#button-dj-waitlist-view').attr('title').split('(')[1];
             spot = spot.substring(0, spot.indexOf(')'));

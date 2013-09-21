@@ -70,6 +70,15 @@ var COOKIE_USERLIST = 'userlist';
  */
 var MAX_USERS_WAITLIST = 50;
 
+/*
+ * Makes it so every special user in the room via the userlist will 
+ * have a picture of doge next to them.  Thanks Harry Schneidman 
+ * for the idea.
+ */
+var dogeMode = prompt("Would you like to enable doge mode? If you have no idea, just hit enter.", "Yes/No");
+dogeMode = dogeMode.toUpperCase();
+dogeMode = dogeMode == "YES";
+
 /**
  * Initialise all of the Plug.dj API listeners which we use to asynchronously intercept specific events and the data
  * attached with them.
@@ -544,8 +553,9 @@ function drawUserlistItem(imagePath, color, username)
      */
     if (imagePath !== 'void')
     {
-        var realPath = 'https://raw.github.com/connergdavis/Plugbot/master/icons/' + imagePath;
-        $('#plugbot-userlist').append('<img src="' + realPath + '" align="left" style="margin-left:6px;margin-top:2px" />');
+        $('#plugbot-userlist').append('<img src="' 
+			+ (dogeMode ? 'https://raw.github.com/connergdavis/Plugbot/master/icons/doge.png' : 'https://raw.github.com/connergdavis/Plugbot/master/icons/' + imagePath) 
+			+ '" align="left" style="margin-left:6px;margin-top:2px" />');
     }
 
     /*

@@ -69,6 +69,7 @@ Seriously.  If you e-mail me about a problem installing Plug.bot, it's getting d
 
 Version | Release Date | Changes
 --------|--------------|--------
+1.2 | September 20, 2013 | <ul><li>DOGE MODE is now a thing! If you don't understand it then feel free to just ignore it by just hitting enter (prompt only checks for 'yes' and will otherwise totally ignore)</li></ul>
 1.1 | March 21, 2013 | <ul><li>Added skip video, cappie01's idea</li><li>Cleaned up code consistency</li><li>Removed custom username FX (it was bad anyway)</li></ul>
 1.0 | November 23, 2012 | <ul><li>Supports Plug.dj "Pepper", the newest version, introduces mostly rank changes</li><li>Revamped userlist code, faster and completely stable at this point</li><li>Userlist now allows you to @mention users by clicking their name, you can @mention multiple users as well</li><li>Over 1,000 users now!</li></ul>
 0.5a | August 1, 2012 | <ul><li>Userlist font is smaller due to more users being in rooms, thanks Monstercat</li><li>Hide video now lasts until you disable it, rather than resetting each time a new song comes around</li><li>Moved the UI to be beside the chat for more space for buttons</li><li>Buttons are now HTML-generated instead of pictures</li><li>Custom username FX now allows you to highlight specific people with custom colors</li></ul>

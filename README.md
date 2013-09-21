@@ -25,6 +25,7 @@ This is where I will map out any bug fixing, in other words small issue solving 
 
 Release Date | Change
 -------------|--------
+September 20, 2013 | <ul><li>Fixed userlist icons except for Featured DJ.  Sorry DJs :(</li></ul>
 September 14, 2013 | <ul><li>Temporarily removed adding pictures to the userlist based on the user's permissions because I no longer have said pictures.  Looking to recover them or make new ones soon.</li><li>Minor tweaks in documentation.</li></ul>
 
 

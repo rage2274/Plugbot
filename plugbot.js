@@ -544,19 +544,15 @@ function drawUserlistItem(imagePath, color, username)
      */
     if (imagePath !== 'void')
     {
-        var realPath = 'http://www.theedmbasement.com/basebot/userlist/' + imagePath;
-        //$('#plugbot-userlist').append('<img src="' + realPath + '" align="left" style="margin-left:6px;margin-top:2px" />');
+        var realPath = 'https://raw.github.com/connergdavis/Plugbot/master/icons/' + imagePath;
+        $('#plugbot-userlist').append('<img src="' + realPath + '" align="left" style="margin-left:6px;margin-top:2px" />');
     }
 
     /*
      * Write the HTML code to the userlist.
      */
-    /*$('#plugbot-userlist').append(
+    $('#plugbot-userlist').append(
         '<p style="cursor:pointer;' + (imagePath === 'void' ? '' : 'text-indent:6px !important;') + 'color:' + color + ';'
-        + ((API.getDJs()[0].username == username) ? 'font-size:15px;font-weight:bold;' : '')
-        + '" onclick="$(\'#chat-input-field\').val($(\'#chat-input-field\').val() + \'@' + username + ' \').focus();">'
-        + username + '</p>');*/
-    $('#plugbot-userlist').append('<p style="cursor:pointer;color:' + color + ';'
         + ((API.getDJs()[0].username == username) ? 'font-size:15px;font-weight:bold;' : '')
         + '" onclick="$(\'#chat-input-field\').val($(\'#chat-input-field\').val() + \'@' + username + ' \').focus();">'
         + username + '</p>');

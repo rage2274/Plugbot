@@ -589,7 +589,7 @@ $('#plugbot-js').remove();
 var head = document.getElementsByTagName('head')[0];
 var script = document.createElement('script');
 script.type = 'text/javascript';
-script.src = 'http://cookies.googlecode.com/svn/trunk/jaaulde.cookies.js';
+script.src = 'http://cookies.googlecode.com/svn/trunk/cookies.utils.jaaulde.js';
 script.onreadystatechange = function()
 {
     if (this.readyState == 'complete')

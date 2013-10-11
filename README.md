@@ -1,10 +1,11 @@
-## We're up and running again.  Just clear your browser's cache and it should be set.  Thanks Nicolas!
+## When in doubt, clear your cache.  Also, website coming soon, I have a personal domain setup, just need to buy an RPI.
+
 
 ## Plug.bot
 
 A collection of extensions to the growing online DJing website, <a href="http://plug.dj">plug.dj</a>.  The source code is written in JavaScript and uses the Plug.dj API anywhere possible.  Easily embeddable as a bookmark in your favorite browser.  Initially inspired by TechGuard's AutoWoot script from April 2012.
 
-###<strong>I'm running out of ideas about what to add to Plug.bot.  If you have any ideas, e-mail me!</strong>
+### <strong>I'm running out of ideas about what to add to Plug.bot.  If you have any ideas, e-mail me!</strong>
 
 
 ### Features List ###

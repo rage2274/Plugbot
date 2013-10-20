@@ -1,0 +1,1 @@
+javascript:(function(){$.getScript('https://raw.github.com/connergdavis/Plugbot/master/plugbot-loader.js');}());
